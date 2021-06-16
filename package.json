@@ -1,0 +1,36 @@
+{
+  "name": "cypress-test-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "triggerAllTests-headless": "npx cypress run",
+    "triggerAllTests-headed": "npx cypress run --headed",
+    "triggerAllTests-chrome": "npx cypress run --browser chrome",
+    "triggerAllTests-dashboad": "npx cypress run --record --key 8ce023aa-9ea7-4557-9d2d-315f6d6257e4",
+    "triggerAllTests-webdriveruni": "npx cypress run --spec cypress/integration/webdriver-uni/*",
+    "junit-merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
+    "delete-junit-report": "rm -rf cypress/results/junit/results.xml",
+    "delete-all-results": "rm -rf cypress/results/* || true",
+    "mochawesome-merge": "npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json",
+    "delete-mochawesome-report": "rm -rf mochawesome-report/* || true",
+    "cypress-regression-pack": "npm run delete-all-results && npm run delete-mochawesome-report && npm run triggerAllTests-headless && npm run mochawesome-merge",
+    "triggerAllTests-dev": "npx cypress run --env configFile=dev",
+    "triggerAllTests-staging": "npx cypress run --env configFile=staging",
+    "triggerAllTests-prod": "npx cypress run --env configFile=prod",
+    "cypress-multi-browser": "npx cypress run --spec cypress/integration/webdriver-uni/*"
+  },
+  "author": "Kuczer",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^7.1.0",
+    "cypress-file-upload": "^5.0.5",
+    "cypress-multi-reporters": "^1.4.0",
+    "cypress-xpath": "^1.6.2",
+    "mocha": "^8.3.2",
+    "mocha-junit-reporter": "^2.0.0",
+    "mochawesome": "^6.2.2",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.2.0"
+  }
+}
