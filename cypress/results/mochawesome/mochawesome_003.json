@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-04-25T10:00:21.746Z",
+    "end": "2021-04-25T10:00:37.945Z",
+    "duration": 16199,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "dc444d99-1293-43f3-a243-acd383460769",
+      "title": "",
+      "fullFile": "cypress/integration/Tests/login.test.js",
+      "file": "cypress/integration/Tests/login.test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "33aedae7-b34e-4b70-b73b-38418d734d73",
+          "title": "Login Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login with valid creditentials",
+              "fullTitle": "Login Tests Login with valid creditentials",
+              "timedOut": null,
+              "duration": 11986,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "navigatonHelper.openHomepage();\nnavigatonHelper.clickLoginOrRegister();\nloginPageHelper.enterUserName(\"AshtonScalac\");\nloginPageHelper.enterPassword(\"test1234\");\nloginPageHelper.clickOnLoginButton();\nloginPageHelper.isUserloginCorrectly();",
+              "err": {},
+              "uuid": "fd3f0a39-8f8a-4035-ac0a-61e2659a0898",
+              "parentUUID": "33aedae7-b34e-4b70-b73b-38418d734d73",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login with invalid creditantials",
+              "fullTitle": "Login Tests Login with invalid creditantials",
+              "timedOut": null,
+              "duration": 4103,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "navigatonHelper.openHomepage();\nnavigatonHelper.clickLoginOrRegister();\nloginPageHelper.enterUserName(\"Ashton\");\nloginPageHelper.enterPassword(\"Test\");\nloginPageHelper.clickOnLoginButton();\nloginPageHelper.loginErrorMessage();",
+              "err": {},
+              "uuid": "6dc0fcad-16f3-442b-b762-ec3731c9ad80",
+              "parentUUID": "33aedae7-b34e-4b70-b73b-38418d734d73",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fd3f0a39-8f8a-4035-ac0a-61e2659a0898",
+            "6dc0fcad-16f3-442b-b762-ec3731c9ad80"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 16089,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

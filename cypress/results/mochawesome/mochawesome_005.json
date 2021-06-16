@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-04-25T10:01:02.780Z",
+    "end": "2021-04-25T10:01:25.468Z",
+    "duration": 22688,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ae8e3fc1-bddc-4629-8d8f-3ac773ba0e73",
+      "title": "",
+      "fullFile": "cypress/integration/Tests/register.test.js",
+      "file": "cypress/integration/Tests/register.test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fd88374a-b929-4f3d-92ce-4fccfcd3fe93",
+          "title": "Register Form",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Register a new user - pass test",
+              "fullTitle": "Register Form Register a new user - pass test",
+              "timedOut": null,
+              "duration": 13993,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let randomString = Math.random().toString(36).substring(1);\nlet randomEmail = Math.random().toString(32).substring(1) + \"@domain.com\";\nnavigatonHelper.openHomepage();\nnavigatonHelper.clickLoginOrRegister();\nregisterHelper.clickContinueRegister();\nregisterHelper.fillRegisterForm(randomString, randomString, randomEmail, randomString, randomString, \"3516\", \"Angus\", randomString, // \"1\",\n// \"Afghanistan\",\nrandomString, \"password\", \"password\");\nregisterHelper.checkPrivacyPolicy();\nregisterHelper.clickContinueRegister();",
+              "err": {},
+              "uuid": "0e35e7db-8d92-400c-ab38-b77f22b74774",
+              "parentUUID": "fd88374a-b929-4f3d-92ce-4fccfcd3fe93",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Register a new user - failed test",
+              "fullTitle": "Register Form Register a new user - failed test",
+              "timedOut": null,
+              "duration": 8586,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "navigatonHelper.openHomepage();\nnavigatonHelper.clickLoginOrRegister();\nregisterHelper.clickContinueRegister();\nregisterHelper.fillRegisterForm(\"firstName\", \"lastName\", \"email\", \"address\", \"city\", \"3516\", \"Angus\", \"postcode\", \"login\", \"password\", \"passwordConfirm\");\nregisterHelper.checkPrivacyPolicy();\nregisterHelper.clickContinueRegister();\nregisterHelper.failRegisterError();",
+              "err": {},
+              "uuid": "c7e3498d-92bf-40b2-bbd6-77dba030d80a",
+              "parentUUID": "fd88374a-b929-4f3d-92ce-4fccfcd3fe93",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0e35e7db-8d92-400c-ab38-b77f22b74774",
+            "c7e3498d-92bf-40b2-bbd6-77dba030d80a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 22579,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

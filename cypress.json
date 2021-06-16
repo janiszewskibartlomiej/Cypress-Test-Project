@@ -1,0 +1,17 @@
+{
+    "baseUrl": "https://automationteststore.com/",
+    "chromeWebSecurity": true,
+    "defaultCommandTimeout": 10000,
+    "pageLoadTimeout": 30000,
+    "env": {
+      "first_name": "Ashton",
+      "automationTestStore_homepage": "https://automationteststore.com/"
+    },
+    "projectId": "xoov77",
+      "reporter": "cypress-multi-reporters",
+      "reporterOptions": {
+        "configFile": "reporter-config.json"
+      },
+      "experimentalStudio": true
+    }
+  
