@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
-import Navigaton_PO from "../../support/pageObjects/Navigaton_PO";
-import Login_PO from "../../support/pageObjects/Login_PO";
+import Navigaton_PO from "../../../support/pageObjects/Navigaton_PO";
+import Login_PO from "../../../support/pageObjects/Login_PO";
 
 const navigatonHelper = new Navigaton_PO();
 const loginPageHelper = new Login_PO();

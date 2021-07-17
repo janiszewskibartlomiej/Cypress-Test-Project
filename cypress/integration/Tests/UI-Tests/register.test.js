@@ -1,5 +1,5 @@
-import Navigaton_PO from "../../support/pageObjects/Navigaton_PO";
-import Register_PO from "../../support/pageObjects/Register_PO";
+import Navigaton_PO from "../../../support/pageObjects/Navigaton_PO";
+import Register_PO from "../../../support/pageObjects/Register_PO";
 
 const navigatonHelper = new Navigaton_PO();
 const registerHelper = new Register_PO();
