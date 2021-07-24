@@ -1,5 +1,5 @@
 {
-    "baseUrl": "https://automationteststore.com/",
+    "baseUrl": "http://coop.apps.symfonycasts.com",
     "chromeWebSecurity": true,
     "defaultCommandTimeout": 10000,
     "pageLoadTimeout": 30000,
