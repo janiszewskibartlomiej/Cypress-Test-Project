@@ -1,21 +1,16 @@
+import { loginSelectors } from "../selectors/selectors";
 class Login_PO {
-  // selectors:
-  loginInput = '[name="loginname"]';
-  passwordInput = '[name="password"]';
-  loginButton = '[title="Login"]';
-  errorIncorrectLogin = ".alert-danger";
-
   enterUserName(userName) {
-    cy.get(this.loginInput).type(userName);
+    cy.get(loginSelectors.loginInput).type(userName);
   }
   enterPassword(password) {
-    cy.get(this.passwordInput).type(password);
+    cy.get(loginSelectors.passwordInput).type(password);
   }
   clickOnLoginButton() {
-    cy.get(this.loginButton).click();
+    cy.get(loginSelectors.loginButton).click();
   }
   loginErrorMessage() {
-    cy.get(this.errorIncorrectLogin);
+    cy.get(loginSelectors.errorIncorrectLogin);
   }
   isUserloginCorrectly() {
     cy.url().should("include", "index.php?rt=account/account");
