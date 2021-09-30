@@ -15,8 +15,6 @@ class Register_PO {
     regionValue,
     regionName,
     postcode,
-    // countryValue,
-    // countryName,
     login,
     password,
     passwordConfirm
