@@ -1,7 +1,6 @@
 import { registerSelectors } from "../selectors/selectors";
 
 class Register_PO {
-
   clickContinueRegister() {
     cy.get(registerSelectors.continueButton).click();
     cy.get(registerSelectors.registerHeader).contains(" Create Account");
@@ -44,7 +43,9 @@ class Register_PO {
     );
   }
   successRegister() {
-    cy.get(registerSelectors.registerHeader).contains("Your Account Has Been Created!")
+    cy.get(registerSelectors.registerHeader).contains(
+      "Your Account Has Been Created!"
+    );
   }
 }
 export default Register_PO;

@@ -13,7 +13,7 @@ class Login_PO {
     cy.get(loginSelectors.errorIncorrectLogin);
   }
   isUserloginCorrectly() {
-    cy.url().should("include", "index.php?rt=account/account");
+    cy.url().should("include", "account/account");
   }
 }
 export default Login_PO;
