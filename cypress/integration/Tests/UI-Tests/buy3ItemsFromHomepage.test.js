@@ -15,13 +15,11 @@ describe("Buy Items from homepage test", () => {
   it("Add 3 creams from the homepage and checkout", () => {
     navigatonHelper.openHomepage();
     navigatonHelper.clickLoginOrRegister();
-    loginPageHelper.enterUserName("AshtonScalac");
-    loginPageHelper.enterPassword("test1234");
+    loginPageHelper.login("AshtonScalac", "test1234");
     loginPageHelper.clickOnLoginButton();
     loginPageHelper.isUserloginCorrectly();
     navigatonHelper.openHomepage();
-    addItemsHelper.add3ItemsFromHomepageToTheCart();
-    navigatonHelper.openChart();
+    addItemsHelper.add3ItemsToTheCart();
     cartItemsHelper.checkIfItemsInChartAreCorrect(3);
     checkoutHelper.checkoutWithAutoFilledData();
   });
