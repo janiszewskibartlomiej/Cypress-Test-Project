@@ -18,18 +18,19 @@ class Register_PO {
     password,
     passwordConfirm
   ) {
-    cy.get(registerSelectors.firstName).type(firstName);
-    cy.get(registerSelectors.lastName).type(lastName);
-    cy.get(registerSelectors.email).eq(0).type(email);
-    cy.get(registerSelectors.address_1).type(address);
-    cy.get(registerSelectors.city).type(city);
-    cy.get(registerSelectors.regionState)
-      .select(regionValue)
-      .contains(regionName);
-    cy.get(registerSelectors.postcode).type(postcode);
-    cy.get(registerSelectors.login).type(login);
-    cy.get(registerSelectors.password).type(password);
-    cy.get(registerSelectors.passwordConfirm).type(passwordConfirm);
+    cy.fillRegisterOrCheckoutForm(
+      firstName,
+      lastName,
+      email,
+      address,
+      city,
+      regionValue,
+      regionName,
+      postcode,
+      login,
+      password,
+      passwordConfirm
+    );
   }
   checkPrivacyPolicy() {
     cy.get(registerSelectors.privacyPolicy).click();

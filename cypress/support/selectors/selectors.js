@@ -4,6 +4,7 @@ export const homePageSelectors = {
   addAbsolueEyeCreamToChart: '[data-id="65"]',
   addTotalMoistureCreamToChart: '[data-id="66"]',
   openChart: ".cart_total", 
+  apparelAndAccesories: '[href*="path=68"]',
 };
 
 export const loginSelectors = {
@@ -31,6 +32,10 @@ export const registerSelectors = {
   failMessage: ".alert-error",
 };
 
+export const productDetailsSelectors = {
+  addToChart: '.productpagecart'
+}
+
 export const chartSelectors = {
   itemBox: '[id*="cart_quantity"]',
 };
@@ -39,4 +44,11 @@ export const checkoutSelectors = {
   checkoutButton: '#cart_checkout2',
   confirmOrderButton: '#checkout_btn',
   successMessage: '.heading1',
+  continueButton: '[title="Continue"]',
+  guestCheckout: '#accountFrm_accountguest',
+}
+
+export const shoesSelectors = {
+  openShoes: '[href*="path=68_69"]',
+  OpenShoesDetailsRubyShoo: '[href*="id=117"]'
 }

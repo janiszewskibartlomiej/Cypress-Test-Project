@@ -13,12 +13,11 @@ let regionValue = "3516";
 let regionName = "Angus";
 let randomPostcode = Math.random().toString(36).substring(1);
 let randomLogin = Math.random().toString(36).substring(1);
-let password = "password"
-let confirmPassword = "password"
+let password = "password";
+let confirmPassword = "password";
 
 describe("Register Form", () => {
   it("Register a new user - pass test", () => {
-
     navigatonHelper.openHomepage();
     navigatonHelper.clickLoginOrRegister();
     registerHelper.clickContinueRegister();

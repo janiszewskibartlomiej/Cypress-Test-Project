@@ -1,4 +1,4 @@
-import { homePageSelectors } from "../selectors/selectors";
+import { homePageSelectors, shoesSelectors } from "../selectors/selectors";
 class Navigaton_PO {
   openHomepage() {
     cy.visit("https://automationteststore.com/");
@@ -11,6 +11,14 @@ class Navigaton_PO {
   openChart() {
     cy.get(homePageSelectors.openChart).click();
     cy.url().should("include", "checkout/cart");
+  }
+  openApparelAndAccesoriesTab() {
+    cy.get(homePageSelectors.apparelAndAccesories).eq(0).click();
+    cy.url().should("include", "path=68");
+  }
+  openShoesTab() {
+    cy.get(shoesSelectors.openShoes).eq(1).click();
+    cy.url().should("include", "path=68_69");
   }
 }
 export default Navigaton_PO;

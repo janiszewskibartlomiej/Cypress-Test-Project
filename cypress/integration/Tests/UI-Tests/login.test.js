@@ -9,16 +9,14 @@ describe("Login Tests", () => {
   it("Login with valid creditentials", () => {
     navigatonHelper.openHomepage();
     navigatonHelper.clickLoginOrRegister();
-    loginPageHelper.enterUserName("AshtonScalac");
-    loginPageHelper.enterPassword("test1234");
+    loginPageHelper.login("AshtonScalac", "test1234");
     loginPageHelper.clickOnLoginButton();
     loginPageHelper.isUserloginCorrectly();
   });
   it("Login with invalid creditantials", () => {
     navigatonHelper.openHomepage();
     navigatonHelper.clickLoginOrRegister();
-    loginPageHelper.enterUserName("Ashton");
-    loginPageHelper.enterPassword("Test");
+    loginPageHelper.login("Ashton", "Test");
     loginPageHelper.clickOnLoginButton();
     loginPageHelper.loginErrorMessage();
   });
