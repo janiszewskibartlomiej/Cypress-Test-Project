@@ -33,7 +33,8 @@ export const registerSelectors = {
 };
 
 export const productDetailsSelectors = {
-  addToChart: '.productpagecart'
+  addToChart: '.productpagecart',
+  qty: '#product_quantity'
 }
 
 export const chartSelectors = {
@@ -50,5 +51,5 @@ export const checkoutSelectors = {
 
 export const shoesSelectors = {
   openShoes: '[href*="path=68_69"]',
-  OpenShoesDetailsRubyShoo: '[href*="id=117"]'
+  sizeCheckbox: '.form-group'
 }

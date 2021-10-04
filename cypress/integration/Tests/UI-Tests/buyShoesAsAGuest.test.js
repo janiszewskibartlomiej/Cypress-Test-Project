@@ -10,8 +10,12 @@ describe("Buy as a Guest", () => {
     navigatonHelper.openHomepage();
     navigatonHelper.openApparelAndAccesoriesTab();
     navigatonHelper.openShoesTab();
-    shoesDetailsHelper.OpenShoesDetails(
-      "New Ladies High Wedge Heel Toe Thong Diamante Flip Flop Sandals"
+    shoesDetailsHelper.openShoesDetails(
+      "New Ladies High Wedge Heel Toe Thong Diamante Flip Flop Sandals", 'product_id=116'
     );
+    shoesDetailsHelper.chooseSize('4 UK');
+    shoesDetailsHelper.changeTheQty('10');
+    cy.checkValue(10);
+    cy.clickAddToChart();
   });
 });
