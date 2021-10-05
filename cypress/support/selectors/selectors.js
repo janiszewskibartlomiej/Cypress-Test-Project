@@ -16,15 +16,17 @@ export const loginSelectors = {
 
 export const registerSelectors = {
   continueButton: '[title="Continue"]',
-  registerHeader: ".maintext",
+  registerHeader: '.maintext',
   firstName: '[name="firstname"]',
   lastName: '[name="lastname"]',
   email: '[name="email"]',
   address_1: '[name="address_1"]',
   city: '[name="city"]',
-  regionState: "#AccountFrm_zone_id",
+  regionGuest: '#guestFrm_zone_id',
+  regionState: '#AccountFrm_zone_id',
   postcode: '[name="postcode"]',
   country: '[name="country_id"]',
+  countryGuest: '#guestFrm_country_id',
   login: '[name="loginname"]',
   password: '[name="password"]',
   passwordConfirm: '[name="confirm"]',
@@ -42,11 +44,13 @@ export const chartSelectors = {
 };
 
 export const checkoutSelectors = {
+  checkoutTopButton: '#cart_checkout1',
   checkoutButton: '#cart_checkout2',
   confirmOrderButton: '#checkout_btn',
   successMessage: '.heading1',
   continueButton: '[title="Continue"]',
   guestCheckout: '#accountFrm_accountguest',
+  checkoutOrder: '.maintext',
 }
 
 export const shoesSelectors = {

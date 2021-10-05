@@ -37,6 +37,12 @@ Cypress.Commands.add("CheckQuantityOfTheElements", (selector, value) => {
   });
 });
 
+Cypress.Commands.add("checkTextOfTheElement", (selector, value) => {
+  cy.get(selector).should(($p) => {
+    expect($p).to.have.text(value);
+  });
+});
+
 Cypress.Commands.add("checkValue", (value) => {
   cy.get(productDetailsSelectors.qty).should(($p) => {
     expect($p).to.have.value(value);
@@ -48,7 +54,7 @@ Cypress.Commands.add("chooseOptionFromCheckbox", (option) => {
 });
 
 Cypress.Commands.add(
-  "fillRegisterOrCheckoutForm",
+  "fillRegisterForm",
   (
     firstName,
     lastName,
@@ -69,10 +75,41 @@ Cypress.Commands.add(
     cy.get(registerSelectors.city).type(city);
     cy.get(registerSelectors.regionState)
       .select(regionValue)
-      .contains(regionName);
+      .contains(regionName)
+      .should("have.value", regionValue);
     cy.get(registerSelectors.postcode).type(postcode);
     cy.get(registerSelectors.login).type(login);
     cy.get(registerSelectors.password).type(password);
     cy.get(registerSelectors.passwordConfirm).type(passwordConfirm);
+  }
+);
+Cypress.Commands.add(
+  "fillCheckoutForm",
+  (
+    firstName,
+    lastName,
+    email,
+    address,
+    city,
+    regionValue,
+    regionName,
+    postcode,
+    countryValue,
+    countryName
+  ) => {
+    cy.get(registerSelectors.firstName).type(firstName);
+    cy.get(registerSelectors.lastName).type(lastName);
+    cy.get(registerSelectors.email).eq(0).type(email);
+    cy.get(registerSelectors.address_1).type(address);
+    cy.get(registerSelectors.city).type(city);
+    cy.get(registerSelectors.regionGuest)
+      .select(regionValue)
+      .contains(regionName)
+      .should("have.value", regionValue);
+    cy.get(registerSelectors.postcode).type(postcode);
+    cy.get(registerSelectors.countryGuest)
+      .select(countryValue)
+      .contains(countryName)
+      .should("have.value", countryValue);
   }
 );
