@@ -2,6 +2,7 @@ import { homePageSelectors, shoesSelectors } from "../selectors/selectors";
 class Navigaton_PO {
   openHomepage() {
     cy.visit("https://automationteststore.com/");
+    cy.title().should("eq", "A place to practice your automation skills!");
     cy.get(homePageSelectors.openChart);
   }
   clickLoginOrRegister() {

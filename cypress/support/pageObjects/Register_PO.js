@@ -3,7 +3,10 @@ import { registerSelectors } from "../selectors/selectors";
 class Register_PO {
   clickContinueRegister() {
     cy.get(registerSelectors.continueButton).click();
-    cy.get(registerSelectors.registerHeader).contains(" Create Account");
+    cy.get(registerSelectors.registerHeader).should(
+      "have.text",
+      " Create Account"
+    );
   }
   fillRegisterForm(
     firstName,
@@ -18,7 +21,7 @@ class Register_PO {
     password,
     passwordConfirm
   ) {
-    cy.fillRegisterOrCheckoutForm(
+    cy.fillRegisterForm(
       firstName,
       lastName,
       email,
@@ -39,12 +42,14 @@ class Register_PO {
     cy.get(registerSelectors.continueButton).click();
   }
   failRegisterError() {
-    cy.get(registerSelectors.failMessage).contains(
-      "Password confirmation does not match password!"
+    cy.get(registerSelectors.failMessage).should(
+      "contain.text",
+      "Email Address does not appear to be valid!"
     );
   }
   successRegister() {
-    cy.get(registerSelectors.registerHeader).contains(
+    cy.get(registerSelectors.registerHeader).should(
+      "have.text",
       "Your Account Has Been Created!"
     );
   }
