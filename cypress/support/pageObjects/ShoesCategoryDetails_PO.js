@@ -8,8 +8,5 @@ class ShoesCategoryDetails_PO {
   chooseSize(option) {
     cy.chooseOptionFromCheckbox(option);
   }
-  changeTheQty(value) {
-    cy.clearInputAndType(productDetailsSelectors.qty, value);
-  }
 }
 export default ShoesCategoryDetails_PO;
