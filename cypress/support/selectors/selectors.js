@@ -55,5 +55,12 @@ export const checkoutSelectors = {
 
 export const shoesSelectors = {
   openShoes: '[href*="path=68_69"]',
+  openTshirts: '[href*="path=68_70"]',
   sizeCheckbox: '.form-group'
+}
+
+export const tShirtsSelectors = {
+  sizeForSleeve: '#option353',
+  sizeForJersey: '#option349',
+  sizeForFruit: '#option348',
 }

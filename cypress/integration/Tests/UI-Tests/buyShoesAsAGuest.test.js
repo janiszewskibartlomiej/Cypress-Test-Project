@@ -2,6 +2,7 @@
 import Navigaton_PO from "../../../support/pageObjects/Navigaton_PO";
 import ShoesCategoryDetails_PO from "../../../support/pageObjects/ShoesCategoryDetails_PO";
 import Checkout_PO from "../../../support/pageObjects/Checkout_PO";
+import { productDetailsSelectors } from "../../../support/selectors/selectors";
 
 const navigatonHelper = new Navigaton_PO();
 const shoesDetailsHelper = new ShoesCategoryDetails_PO();
@@ -28,7 +29,7 @@ describe('Buy as a Guest', () => {
       "product_id=116"
     );
     shoesDetailsHelper.chooseSize("4 UK");
-    shoesDetailsHelper.changeTheQty("10");
+    cy.clearInputAndType(productDetailsSelectors.qty, 10);
     cy.checkValue(10);
     cy.clickAddToChart();
     checkoutHelper.guestCheckout(

@@ -21,5 +21,9 @@ class Navigaton_PO {
     cy.get(shoesSelectors.openShoes).eq(1).click();
     cy.url().should("include", "path=68_69");
   }
+  openTshirtsTab() {
+    cy.get(shoesSelectors.openTshirts).eq(1).click();
+    cy.url().should("include", "path=68_70");
+  }
 }
 export default Navigaton_PO;

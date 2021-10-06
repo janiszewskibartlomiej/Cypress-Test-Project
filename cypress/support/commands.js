@@ -54,6 +54,13 @@ Cypress.Commands.add("chooseOptionFromCheckbox", (option) => {
 });
 
 Cypress.Commands.add(
+  "chooseOptionFromDropdownList",
+  (selector, option, text) => {
+    cy.get(selector).select(option).should("contain.text", text);
+  }
+);
+
+Cypress.Commands.add(
   "fillRegisterForm",
   (
     firstName,
