@@ -15,7 +15,7 @@ Cypress.Commands.add("clearInputAndType", (selector, text) => {
 
 Cypress.Commands.add("login", (userName, password) => {
   cy.get(loginSelectors.loginInput).type(userName);
-  cy.get(loginSelectors.passwordInput).type(password);
+  cy.get(loginSelectors.passwordInput).type(password, { sensitive: true });
 });
 
 Cypress.Commands.add("clickAddToChart", () => {
@@ -27,8 +27,21 @@ Cypress.Commands.add("openProduct", (name) => {
   cy.get(".prdocutname").contains(name).click();
 });
 
-Cypress.Commands.add("addProductToTheChart", (name) => {
-  cy.get(".productcart").contains(name).click();
+Cypress.Commands.add("addProductToTheBasket", (productName) => {
+  cy.get(".fixed_wrapper .prdocutname").each(($el, index) => {
+    if ($el.text() === productName) {
+      cy.log($el.text());
+      cy.get(".productcart").eq(index).click();
+    }
+  });
+});
+
+Cypress.Commands.add("selectProduct", (productName) => {
+  cy.get(".fixed_wrapper .prdocutname").each(($el) => {
+    if ($el.text().includes(productName)) {
+      cy.wrap($el).click();
+    }
+  });
 });
 
 Cypress.Commands.add("CheckQuantityOfTheElements", (selector, value) => {
