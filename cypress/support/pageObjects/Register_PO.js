@@ -50,7 +50,7 @@ class Register_PO {
   successRegister() {
     cy.get(registerSelectors.registerHeader).should(
       "have.text",
-      "Your Account Has Been Created!"
+      " Your Account Has Been Created!"
     );
   }
 }

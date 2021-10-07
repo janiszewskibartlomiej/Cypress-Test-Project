@@ -12,6 +12,8 @@ export const loginSelectors = {
   passwordInput: '[name="password"]',
   loginButton: '[title="Login"]',
   errorIncorrectLogin: ".alert-danger",
+  logoutButton: '[href*="account/logout"]',
+  logoutMessage: '.maintext',
 };
 
 export const registerSelectors = {

@@ -12,5 +12,10 @@ class Login_PO {
   isUserloginCorrectly() {
     cy.url().should("include", "account/account");
   }
+  logout() {
+    cy.get(loginSelectors.logoutButton).click();
+    cy.url().should("include", "account/logout");
+    cy.checkTextOfTheElement(loginSelectors.logoutMessage, " Account Logout");
+  }
 }
 export default Login_PO;

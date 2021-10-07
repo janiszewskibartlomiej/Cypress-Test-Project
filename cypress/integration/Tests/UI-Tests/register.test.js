@@ -17,10 +17,12 @@ let password = "password";
 let confirmPassword = "password";
 
 describe("Register Form", () => {
-  it("Register a new user - pass test", () => {
+  beforeEach(function () {
     navigatonHelper.openHomepage();
     navigatonHelper.clickLoginOrRegister();
     registerHelper.clickContinueRegister();
+  });
+  it("Register a new user - pass test", () => {
     registerHelper.fillRegisterForm(
       randomFirstName,
       randomLastName,
@@ -36,6 +38,7 @@ describe("Register Form", () => {
     );
     registerHelper.checkPrivacyPolicy();
     registerHelper.clickContinueRegister();
+    registerHelper.successRegister();
   });
 
   it("Register a new user - failed test", () => {
