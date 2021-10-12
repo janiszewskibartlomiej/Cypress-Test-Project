@@ -133,3 +133,5 @@ Cypress.Commands.add(
       .should("have.value", countryValue);
   }
 );
+require('cypress-downloadfile/lib/downloadFileCommand')
+import 'cypress-file-upload';
